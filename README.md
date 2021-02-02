@@ -3,7 +3,7 @@
 # ECHO-Watershed
 This is where the Environmental Enforcement Watch team will be developing a notebook(s) to compile and visualize environmental pollution and governance trends at watershed scales.
 
-# Default branch - 'main'
+## Default branch - 'main'
 The 'master' branch is no longer the repo's primary branch in line with EDGI's policy decided here: https://github.com/edgi-govdata-archiving/overview/issues/241
 
 > If someone has a local clone, they can update their locals like this:
