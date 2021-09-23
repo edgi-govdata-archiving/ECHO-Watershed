@@ -8,6 +8,78 @@ The notebook asks users to select a common geographic area—zipcode(s)—and fi
 ## Demo
 Watch a demo of the notebook made by @mraisle: https://www.youtube.com/watch?v=gR5jVqb43os
 
+## Tutorial
+### In brief
+This guide provides a hands-on example of one use-case scenario for the Environmental Enforcement Watch (EEW)’s Watershed Notebook for analysis of US EPA data on enforcement of and compliance with environmental protection laws. See the full tutorial guide here: https://docs.google.com/document/d/1fOL1O30cAXS7iOZMItSekG8E8KIUfH-EaYG601W-ncM/edit#heading=h.23ipeq9w0oqj
+
+### Getting Set Up
+The Notebook is available to anyone freely here: https://github.com/edgi-govdata-archiving/ECHO-Watershed/blob/main/ECHO_Watershed.ipynb
+
+A Notebook is short for Jupyter Notebook, a popular data science tool that mixes together “cells” of computer programming code with cells of output and cells of text instructions and context. In this guide we rely on the Google Colab platform to run the Notebook, though advanced users can run it on any platform of their choosing (e.g. Binder, CoCalc, or a local machine) by downloading the .ipynb file from our GitHub repo.
+
+You and/or your students (really, any user) will need to log into a Google account in order to run the Notebook here: https://colab.research.google.com/github/edgi-govdata-archiving/ECHO-Watershed/blob/main/ECHO_Watershed.ipynb Please note that the Notebook does not store any information you enter. We at EDGI won’t see it unless you share it with us.
+
+### Other notes
+- Some cells of the Notebook can take a while to run. If you’re trying to get data for many large areas, be patient!
+- You don’t necessarily need to run each and every cell to accomplish what you’re trying to do. 
+
+### Educators Scenario: 
+You’re a University teacher leading a discussion about environmental justice. You might start by encouraging students to investigate the polluting facilities in their own neighborhoods or near campus.
+
+#### Begin! 
+Here we load some helper code to get us going in our analysis of water pollution and polluters. You'll know this is completed when a small "Done!" appears at the bottom of the gray cell (right before Step 2). 
+
+#### Run some stuff.
+This cell must be run to bring in some utility functions. Like Step 1, we're just looking for a "Done!" at the bottom of this gray cell.
+
+#### Where do you want to search?
+The first piece of information students will need to enter is a zip code, or multiple zip codes. Again, this might be for the campus area or from where they grew up. Not everyone knows what USGS (United States Geological Survey) Hydrologic Unit Code (HUC) they live in, but they probably know their five digit zip code. The Notebook returns all the watersheds that at least partially traverse the zip code(s).
+
+Let’s look closely at the Boston area in Massachusetts. We’ll enter 02150, which covers the city of Chelsea, as well as 02130, which covers the Jamaica Plain neighborhood: 
+
+NOTE: Computers aren’t smart. Be sure to remove any spaces between your zip codes so that the program recognizes them both. 
+NOTE: You can just proceed to the next cell after entering the zip codes - the program will store your entry for later use so there’s no need to re-run this cell. Doing so will actually reset your input. 
+
+Watersheds are curious beasts. They come nested together in different sizes, a bit like Matryoshka dolls. HUCs with eight digits—like 18090203—cover more area than 10 digit ones. Each eight digit HUC will have several 10 digit ones nested within them. In the figure at the right, the Death Valley-Lower Amargosa HUC 8 watershed is broken into more than a dozen 10 digit watersheds, including 1809020303, Marble Canyon.
+
+If you want to search for as wide of a range of facilities as possible, choose an eight digit HUC as your unit of analysis. If you need to narrow in on an area, start with the 10 digit HUC. You can always go back and change your selection, re-running the cells of code. 
+For our two zip codes, let’s show facilities in the 8 digit HUC(s) that intersect with them:
+
+NOTE: You can just proceed to the next cell after choosing the HUC size - the program will store your entry for later use so there’s no need to re-run this cell. Doing so will actually reset your input.
+
+#### Get the data!
+This step pulls the data we need for the selected zipcodes and watershed level (HUC8) we selected from the copy of the ECHO database.
+We are going to go get data about industrial facilities in these areas. We utilize records from the EPA's Environmental Compliance and History Online, or ECHO, database. EDGI keeps our own copy of this database that is updated every week by our partners at Stony Brook University. 
+
+Note that it may take some time for this cell to finish depending on how many facilities there are! You will see “Done!” when the data is loaded.
+
+#### Show me the data!
+Where exactly are these facilities though? How many fall within the zip codes themselves and how many are further upstream in the watershed? We can map them! 
+
+The number of facilities in each watershed (there’s just one HUC8 that encompasses our two example zip codes) is shown in the circles. As we zoom in on the map, we start to see the actual locations of specific facilities.
+
+Clicking on each orange circle pulls up the name of the facility in that location. 
+
+The next cell of code shows us the facilities in this watershed that have been the most non-compliant with the Clean Water Act over the past 13 quarters, or a little over three years. (Pro-tip: if you want to see more than just 20 facilities ranked in terms of non-compliance, you can click in the cell and change 20 to some other number and then re-run it!)
+
+
+#### Explore! 
+That’s it! We’ve accomplished what we set out to do - we found the location of polluting facilities in a given area. We don’t need to run this part of the Notebook unless we want to learn more about these facilities’ compliance with environmental protection laws. 
+You might have students do internet searches on the facilities from Step 5 to learn more about them.
+
+#### Looking at Discharge Monitoring Reports 
+We’ve accomplished what we set out to do - we found the location of polluting facilities in a given area. We don’t need to run this part of the Notebook unless we want to learn more about what these facilities’ have reported releasing into the watershed. 
+
+#### Share your work!
+If you proceed further into the Notebook, you can download the datasets you create in 6.c. and 7.c. 
+
+Under "File" in the top-left corner of the Colab window, select "Print" and choose "Save as PDF" This will download a static PDF copy of the Notebook to your computer.
+
+- Email, tweet, and otherwise let the world know about your findings!
+- Tell us what you found, whether anything that went wrong, or if you would like to arrange a 1:1 workshop.
+- Send an email to environmentalenforcementwatch@gmail.com or reach us on Twitter @EEW_Network
+
+
 ## Default branch - 'main'
 The 'master' branch is no longer the repo's primary branch in line with EDGI's policy decided here: https://github.com/edgi-govdata-archiving/overview/issues/241
 
